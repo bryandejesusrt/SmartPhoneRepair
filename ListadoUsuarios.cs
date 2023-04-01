@@ -167,10 +167,10 @@ namespace SmartPhone7
 
         private void DataGridViewUsuario_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0) // Verifica que el usuario haya hecho clic en una fila, no en los encabezados de las columnas
+            if (e.RowIndex >= 0)
             {
                 DataGridViewRow row = DataGridViewUsuario.Rows[e.RowIndex];
-                id = Convert.ToInt16(row.Cells[0].Value); // Obtiene el valor de la celda en la columna 0 de la fila seleccionada
+                id = Convert.ToInt16(row.Cells[0].Value); 
             }
         }
 

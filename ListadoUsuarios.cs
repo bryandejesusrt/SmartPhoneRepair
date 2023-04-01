@@ -23,12 +23,12 @@ namespace SmartPhone7
         private void MostrarUsuario()
         {           
             using (SqlConnection conexion = new SqlConnection(conexion1.cadenaConexion))
-            {               
-                string consulta = "SELECT * FROM Usuario";               
+            {
+                string consulta = "SELECT * FROM Usuario";
                 DataTable dtUsuarios = new DataTable();
 
                 try
-                {                   
+                {
                     conexion.Open();
                     SqlCommand comando = new SqlCommand(consulta, conexion);
                     SqlDataAdapter adaptador = new SqlDataAdapter(comando);
@@ -39,7 +39,7 @@ namespace SmartPhone7
 
                 }
                 catch (Exception ex)
-                {                  
+                {
                     throw new Exception("Error al mostrar los usuarios: " + ex.Message);
                 }
 

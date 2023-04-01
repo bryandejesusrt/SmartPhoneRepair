@@ -20,7 +20,7 @@ namespace SmartPhone7
         {
             InitializeComponent();
         }
-        int idCliente, idTecnico, idProducto, cantidadVenta = 0;
+        int id, idTecnico, idProducto, cantidadVenta = 0;
 
         Conexion conexion1 = new Conexion();
         bool editar = false;
@@ -113,51 +113,58 @@ namespace SmartPhone7
 
         private void GuardarUsuario()
         {
-            //if (!ValidarCampos()) return;
+            if (!ValidarCampos()) return;
 
-            //using (SqlConnection conexion = new SqlConnection(conexion1.cadenaConexion))
-            //{
-            //    string consulta = (editar) ?
-            //        "UPDATE Usuario SET Nombre = @nombre, Correo = @correo, Rol = @rol, NombreUsuario = @nombreUsuario, Contrasena = @contrasena WHERE Id = @id" :
-            //        "INSERT INTO Usuario (Nombre, Correo, Rol, NombreUsuario, Contrasena) VALUES (@nombre, @correo, @rol, @nombreUsuario, @contrasena)";
+            using (SqlConnection conexion = new SqlConnection(conexion1.cadenaConexion))
+            {
+                string consulta = (editar) ?
+                    "UPDATE Factura \r\nSET IdCliente = @IdCliente, NumeroOrden = @NumeroOrden, FechaFactura = @FechaFactura, Falla = @Falla, DiagnosticoFinal = @DiagnosticoFinal, EstadoOrden = @EstadoOrden, IdTecnico = @IdTecnico, ServicioOfrecido = @ServicioOfrecido, ManoDeObra = @ManoDeObra, ITEBIS = @ITEBIS, Descuento = @Descuento, Subtotal = @Subtotal, Total = @Total, Nota = @Nota\r\nWHERE Id = @Id;\r\n" :
+                    "INSERT INTO Factura (IdCliente, NumeroOrden, FechaFactura, Falla, DiagnosticoFinal, EstadoOrden, IdTecnico, ServicioOfrecido, ManoDeObra, ITEBIS, Descuento, Subtotal, Total, Nota)\r\nVALUES (@IdCliente, @NumeroOrden, @FechaFactura, @Falla, @DiagnosticoFinal, @EstadoOrden, @IdTecnico, @ServicioOfrecido, @ManoDeObra, @ITEBIS, @Descuento, @Subtotal, @Total, @Nota);\r\n";
 
-            //    try
-            //    {
-            //        conexion.Open();
-            //        SqlCommand comando = new SqlCommand(consulta, conexion);
-            //        comando.Parameters.AddWithValue("@nombre", txtNombre.Text.Trim());
-            //        comando.Parameters.AddWithValue("@correo", txtGmail.Text.Trim());
-            //        comando.Parameters.AddWithValue("@rol", cbRol.Text.Trim());
-            //        comando.Parameters.AddWithValue("@nombreUsuario", txtNombreUsuario.Text.Trim());
-            //        comando.Parameters.AddWithValue("@contrasena", txtContraseña.Text.Trim());
-            //        comando.Parameters.AddWithValue("@contrasena", txtConfirmarContraseña.Text.Trim());
+                try
+                {
+                    conexion.Open();
+                    SqlCommand comando = new SqlCommand(consulta, conexion);
+  
+                    comando.Parameters.AddWithValue("@nombre", txtCliente.Text.ToString());
+                    comando.Parameters.AddWithValue("@nombre", txtNumeroOrden.Text.ToString());
+                    comando.Parameters.AddWithValue("@nombre", dtFecha.Text.ToString());
+                    comando.Parameters.AddWithValue("@nombre", txtFalla.Text.ToString());
+                    comando.Parameters.AddWithValue("@nombre", txtDiasgnosticoFinal.Text.ToString());
+                    comando.Parameters.AddWithValue("@nombre", txtTecnico.Text.ToString());
+                    comando.Parameters.AddWithValue("@nombre", ComboEstado.Text.ToString());
+                    comando.Parameters.AddWithValue("@nombre", txtMetodoPago.Text.ToString());
+                    comando.Parameters.AddWithValue("@nombre", txtNota.Text.ToString());
+                    comando.Parameters.AddWithValue("@nombre", txtItebis.Text.ToString());
+                    comando.Parameters.AddWithValue("@nombre", txtDescuento.Text.ToString());
+                    comando.Parameters.AddWithValue("@nombre", lblSubTotal.Text.ToString());
+                    comando.Parameters.AddWithValue("@nombre", lblTotal.Text.ToString());
 
-            //        if (editar) comando.Parameters.AddWithValue("@id", IdUsuario);
+                    if (editar) comando.Parameters.AddWithValue("@id", Id);
 
-            //        int resultado = comando.ExecuteNonQuery();
-            //        if (resultado > 0)
-            //        {
-            //            MessageBox.Show("Usuario guardado exitosamente.");
-            //            editar = false;
-            //            IdUsuario = 0;
-            //            LimpiarControles();
-            //            Close();
-            //        }
-            //        else
-            //        {
-            //            MessageBox.Show("No se pudo guardar el usuario.");
-            //        }
+                    int resultado = comando.ExecuteNonQuery();
+                    if (resultado > 0)
+                    {
+                        MessageBox.Show("Usuario guardado exitosamente.");
+                        editar = false;
+                        id = 0;
+                        LimpiarControles();
+                        Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se pudo guardar el usuario.");
+                    }
 
-            //        conexion.Close();
-            //    }
-            //    catch (Exception ex)
-            //    {
-            //        MessageBox.Show("Error al guardar el usuario: " + ex.Message);
-            //    }
-            //}
+                    conexion.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al guardar el usuario: " + ex.Message);
+                }
+            }
+
         }
-
-      
 
         private void EfectoModal_Tick(object sender, EventArgs e)
         {

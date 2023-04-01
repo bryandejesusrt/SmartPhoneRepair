@@ -205,11 +205,11 @@ namespace SmartPhone7
 
         private void btnAgregarTecnico_Click(object sender, EventArgs e)
         {
-            BuscarTecnico formularioHijo = new BuscarTecnico();
-            formularioHijo.ShowDialog();
+            // BuscarTecnico formularioHijo = new BuscarTecnico();
+            // formularioHijo.ShowDialog();
 
-            idTecnico = formularioHijo.IdSeleccionado;
-            txtTecnico.Text = formularioHijo.NombreSeleccionado;
+            // idTecnico = formularioHijo.IdSeleccionado;
+            // txtTecnico.Text = formularioHijo.NombreSeleccionado;
         }
 
         private void btnAñadirProducto_Click(object sender, EventArgs e)

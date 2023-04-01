@@ -23,12 +23,12 @@ namespace SmartPhone7
         private void MostrarUsuario()
         {           
             using (SqlConnection conexion = new SqlConnection(conexion1.cadenaConexion))
-            {               
-                string consulta = "SELECT * FROM Usuario";               
+            {
+                string consulta = "SELECT * FROM Usuario";
                 DataTable dtUsuarios = new DataTable();
 
                 try
-                {                   
+                {
                     conexion.Open();
                     SqlCommand comando = new SqlCommand(consulta, conexion);
                     SqlDataAdapter adaptador = new SqlDataAdapter(comando);
@@ -39,7 +39,7 @@ namespace SmartPhone7
 
                 }
                 catch (Exception ex)
-                {                  
+                {
                     throw new Exception("Error al mostrar los usuarios: " + ex.Message);
                 }
 
@@ -131,16 +131,10 @@ namespace SmartPhone7
         private void guna2Button1_Click(object sender, EventArgs e)
         {
             id = 0;
-            // Crear el formulario modal
+           
             Usuario formularioModal = new Usuario();
-
-            // Crear el formulario de fondo
             Form formularioDeFondo = UtilidadesFormularios.CrearFormularioDeFondo(Principal.ActiveForm);
-
-            // Mostrar el formulario modal centrado en el formulario principal
             UtilidadesFormularios.CentrarFormularioModal(formularioModal, Principal.ActiveForm);
-
-            // Mostrar el formulario modal como cuadro de diálogo
             formularioModal.ShowDialog(formularioDeFondo);
 
             // Liberar recursos
@@ -173,10 +167,10 @@ namespace SmartPhone7
 
         private void DataGridViewUsuario_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0) // Verifica que el usuario haya hecho clic en una fila, no en los encabezados de las columnas
+            if (e.RowIndex >= 0)
             {
                 DataGridViewRow row = DataGridViewUsuario.Rows[e.RowIndex];
-                id = Convert.ToInt16(row.Cells[0].Value); // Obtiene el valor de la celda en la columna 0 de la fila seleccionada
+                id = Convert.ToInt16(row.Cells[0].Value); 
             }
         }
 

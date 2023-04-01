@@ -27,12 +27,19 @@ namespace SmartPhone7
 
         private void LimpiarControles()
         {
-            //txtNombre.Text = string.Empty;
-            //txtGmail.Text = string.Empty;
-            //cbRol.Text = string.Empty;
-            //txtNombreUsuario.Text = string.Empty;
-            //txtContraseña.Text = string.Empty;
-            //txtConfirmarContraseña.Text = string.Empty;
+            txtCliente.Text = string.Empty;
+            txtNumeroOrden.Text = string.Empty;
+            dtFecha.Text = string.Empty;
+            txtFalla.Text = string.Empty;
+            txtDiasgnosticoFinal.Text = string.Empty;
+            txtTecnico.Text = string.Empty;
+            ComboEstado.Text = string.Empty;
+            txtMetodoPago.Text = string.Empty;
+            txtNota.Text = string.Empty;
+            txtItebis.Text = string.Empty;
+            txtDescuento.Text = string.Empty;
+            lblSubTotal.Text = "0";
+            lblTotal.Text = "0";
         }
 
         //private bool ValidarCampos()

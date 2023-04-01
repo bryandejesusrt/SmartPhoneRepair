@@ -1,5 +1,8 @@
 # SmarphoneRepair📱💻
 
+![image](https://user-images.githubusercontent.com/71520172/229268634-35f82b2a-14cc-4cad-b241-81b098113269.png)
+
+
 ![image](https://user-images.githubusercontent.com/71520172/228977410-b16ffe7a-f37e-4e42-a35e-a052b3212df8.png)
 
 Descripcion: Sistema de ventas de reparación de dispositivos electrónicos en C# y SQL Server. Módulos de facturación, gestión de técnicos, usuarios, clientes e inventarios. Desarrollado en Windows Form. Facilita la gestión de ventas y reparaciones de dispositivos electrónicos.

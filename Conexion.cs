@@ -8,6 +8,6 @@ namespace SmartPhone7
 {
     public class Conexion
     {
-       public  string cadenaConexion = "Data Source=BRYAN;Initial Catalog=SmartPhone7;Integrated Security=True";
+       public string cadenaConexion = "Data Source=BRYAN;Initial Catalog=SmartPhone7;Integrated Security=True";
     }
 }

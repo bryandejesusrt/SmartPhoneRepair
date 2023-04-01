@@ -1,0 +1,52 @@
+C:\Users\bryan\Music\SmartPhone7\bin\Debug\SmartPhone7.exe.config
+C:\Users\bryan\Music\SmartPhone7\bin\Debug\SmartPhone7.exe
+C:\Users\bryan\Music\SmartPhone7\bin\Debug\SmartPhone7.pdb
+C:\Users\bryan\Music\SmartPhone7\bin\Debug\Guna.UI2.dll
+C:\Users\bryan\Music\SmartPhone7\obj\Debug\SmartPhone7.csproj.AssemblyReference.cache
+C:\Users\bryan\Music\SmartPhone7\obj\Debug\SmartPhone7.csproj.SuggestedBindingRedirects.cache
+C:\Users\bryan\Music\SmartPhone7\obj\Debug\SmartPhone7.Properties.Resources.resources
+C:\Users\bryan\Music\SmartPhone7\obj\Debug\SmartPhone7.csproj.GenerateResource.cache
+C:\Users\bryan\Music\SmartPhone7\obj\Debug\SmartPhone7.csproj.CoreCompileInputs.cache
+C:\Users\bryan\Music\SmartPhone7\obj\Debug\SmartPhone7.csproj.CopyComplete
+C:\Users\bryan\Music\SmartPhone7\obj\Debug\SmartPhone7.exe
+C:\Users\bryan\Music\SmartPhone7\obj\Debug\SmartPhone7.pdb
+C:\Users\bryan\Music\SmartPhone7\obj\Debug\SmartPhone7.Login.resources
+C:\Users\bryan\Music\SmartPhone7\obj\Debug\SmartPhone7.Principal.resources
+C:\Users\bryan\Music\SmartPhone7\obj\Debug\SmartPhone7.Inicio.resources
+C:\Users\bryan\Music\SmartPhone7\obj\Debug\SmartPhone7.Usuarios.resources
+C:\Users\bryan\Music\SmartPhone7\obj\Debug\SmartPhone7.Loading.resources
+C:\Users\bryan\OneDrive - Instituto Tecnológico de Las Américas (ITLA)\SmartPhone7\bin\Debug\SmartPhone7.exe.config
+C:\Users\bryan\OneDrive - Instituto Tecnológico de Las Américas (ITLA)\SmartPhone7\bin\Debug\SmartPhone7.exe
+C:\Users\bryan\OneDrive - Instituto Tecnológico de Las Américas (ITLA)\SmartPhone7\bin\Debug\SmartPhone7.pdb
+C:\Users\bryan\OneDrive - Instituto Tecnológico de Las Américas (ITLA)\SmartPhone7\bin\Debug\Guna.UI2.dll
+C:\Users\bryan\OneDrive - Instituto Tecnológico de Las Américas (ITLA)\SmartPhone7\obj\Debug\SmartPhone7.csproj.AssemblyReference.cache
+C:\Users\bryan\OneDrive - Instituto Tecnológico de Las Américas (ITLA)\SmartPhone7\obj\Debug\SmartPhone7.csproj.SuggestedBindingRedirects.cache
+C:\Users\bryan\OneDrive - Instituto Tecnológico de Las Américas (ITLA)\SmartPhone7\obj\Debug\SmartPhone7.BuscarCliente.resources
+C:\Users\bryan\OneDrive - Instituto Tecnológico de Las Américas (ITLA)\SmartPhone7\obj\Debug\SmartPhone7.BuscarProducto.resources
+C:\Users\bryan\OneDrive - Instituto Tecnológico de Las Américas (ITLA)\SmartPhone7\obj\Debug\SmartPhone7.Clientes.resources
+C:\Users\bryan\OneDrive - Instituto Tecnológico de Las Américas (ITLA)\SmartPhone7\obj\Debug\SmartPhone7.Factura.resources
+C:\Users\bryan\OneDrive - Instituto Tecnológico de Las Américas (ITLA)\SmartPhone7\obj\Debug\SmartPhone7.Inicio.resources
+C:\Users\bryan\OneDrive - Instituto Tecnológico de Las Américas (ITLA)\SmartPhone7\obj\Debug\SmartPhone7.ListadoClientes.resources
+C:\Users\bryan\OneDrive - Instituto Tecnológico de Las Américas (ITLA)\SmartPhone7\obj\Debug\SmartPhone7.ListadoFactura.resources
+C:\Users\bryan\OneDrive - Instituto Tecnológico de Las Américas (ITLA)\SmartPhone7\obj\Debug\SmartPhone7.ListadoProducto.resources
+C:\Users\bryan\OneDrive - Instituto Tecnológico de Las Américas (ITLA)\SmartPhone7\obj\Debug\SmartPhone7.ListadoServicios.resources
+C:\Users\bryan\OneDrive - Instituto Tecnológico de Las Américas (ITLA)\SmartPhone7\obj\Debug\SmartPhone7.Loading.resources
+C:\Users\bryan\OneDrive - Instituto Tecnológico de Las Américas (ITLA)\SmartPhone7\obj\Debug\SmartPhone7.Login.resources
+C:\Users\bryan\OneDrive - Instituto Tecnológico de Las Américas (ITLA)\SmartPhone7\obj\Debug\SmartPhone7.ListadoTecnicos.resources
+C:\Users\bryan\OneDrive - Instituto Tecnológico de Las Américas (ITLA)\SmartPhone7\obj\Debug\SmartPhone7.Tecnicos.resources
+C:\Users\bryan\OneDrive - Instituto Tecnológico de Las Américas (ITLA)\SmartPhone7\obj\Debug\SmartPhone7.Usuario.resources
+C:\Users\bryan\OneDrive - Instituto Tecnológico de Las Américas (ITLA)\SmartPhone7\obj\Debug\SmartPhone7.Principal.resources
+C:\Users\bryan\OneDrive - Instituto Tecnológico de Las Américas (ITLA)\SmartPhone7\obj\Debug\SmartPhone7.Producto.resources
+C:\Users\bryan\OneDrive - Instituto Tecnológico de Las Américas (ITLA)\SmartPhone7\obj\Debug\SmartPhone7.Properties.Resources.resources
+C:\Users\bryan\OneDrive - Instituto Tecnológico de Las Américas (ITLA)\SmartPhone7\obj\Debug\SmartPhone7.ListadoUsuarios.resources
+C:\Users\bryan\OneDrive - Instituto Tecnológico de Las Américas (ITLA)\SmartPhone7\obj\Debug\SmartPhone7.csproj.GenerateResource.cache
+C:\Users\bryan\OneDrive - Instituto Tecnológico de Las Américas (ITLA)\SmartPhone7\obj\Debug\SmartPhone7.csproj.CoreCompileInputs.cache
+C:\Users\bryan\OneDrive - Instituto Tecnológico de Las Américas (ITLA)\SmartPhone7\obj\Debug\SmartPhone7.csproj.CopyComplete
+C:\Users\bryan\OneDrive - Instituto Tecnológico de Las Américas (ITLA)\SmartPhone7\obj\Debug\SmartPhone7.exe
+C:\Users\bryan\OneDrive - Instituto Tecnológico de Las Américas (ITLA)\SmartPhone7\obj\Debug\SmartPhone7.pdb
+C:\Users\bryan\OneDrive - Instituto Tecnológico de Las Américas (ITLA)\SmartPhone7\obj\Debug\SmartPhone7.Servicio.resources
+C:\Users\bryan\OneDrive - Instituto Tecnológico de Las Américas (ITLA)\SmartPhone7\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\bryan\OneDrive - Instituto Tecnológico de Las Américas (ITLA)\SmartPhone7\bin\Debug\itextsharp.dll
+C:\Users\bryan\OneDrive - Instituto Tecnológico de Las Américas (ITLA)\SmartPhone7\bin\Debug\itextsharp.xml
+C:\Users\bryan\OneDrive - Instituto Tecnológico de Las Américas (ITLA)\SmartPhone7\obj\Debug\SmartPhone7.BuscarTecnico.resources
+C:\Users\bryan\OneDrive - Instituto Tecnológico de Las Américas (ITLA)\SmartPhone7\obj\Debug\SmartPhone7.CantidadProductoFactura.resources

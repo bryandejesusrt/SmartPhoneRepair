@@ -20,149 +20,151 @@ namespace SmartPhone7
         {
             InitializeComponent();
         }
-        int idCliente, idTecnico, idProducto, cantidadVenta = 0;
+        int id, idTecnico, idProducto, cantidadVenta = 0;
 
         Conexion conexion1 = new Conexion();
         bool editar = false;
 
         private void LimpiarControles()
         {
-            //txtNombre.Text = string.Empty;
-            //txtGmail.Text = string.Empty;
-            //cbRol.Text = string.Empty;
-            //txtNombreUsuario.Text = string.Empty;
-            //txtContraseña.Text = string.Empty;
-            //txtConfirmarContraseña.Text = string.Empty;
+            txtCliente.Text = string.Empty;
+            txtNumeroOrden.Text = string.Empty;
+            dtFecha.Text = string.Empty;
+            txtFalla.Text = string.Empty;
+            txtDiasgnosticoFinal.Text = string.Empty;
+            txtTecnico.Text = string.Empty;
+            ComboEstado.Text = string.Empty;
+            txtMetodoPago.Text = string.Empty;
+            txtNota.Text = string.Empty;
+            txtItebis.Text = string.Empty;
+            txtDescuento.Text = string.Empty;
+            lblSubTotal.Text = "0";
+            lblTotal.Text = "0";
         }
 
-        //private bool ValidarCampos()
-        //{
-        //    if (string.IsNullOrWhiteSpace(txtNombre.Text))
-        //    {
-        //        MessageBox.Show("El campo nombre es obligatorio.", "Campos vacíos", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        //        return false;
-        //    }
+        private bool ValidarCampos()
+        {
+            if (string.IsNullOrWhiteSpace(txtCliente.Text))
+            {
+                MessageBox.Show("El campo cliente es obligatorio.", "Campos vacíos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
 
-        //    if (string.IsNullOrWhiteSpace(txtGmail.Text))
-        //    {
-        //        MessageBox.Show("El campo correo es obligatorio.", "Campos vacíos", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        //        return false;
-        //    }
+            if (string.IsNullOrWhiteSpace(ComboEstado.Text))
+            {
+                MessageBox.Show("El campo Estado de orden de usuario es obligatorio.", "Campos vacíos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
 
-        //    if (!Regex.IsMatch(txtGmail.Text, @"^[^@\s]+@[^@\s]+\.[^@\s]+$"))
-        //    {
-        //        MessageBox.Show("El formato del correo no cumple con los criterios mínimos de un correo electrónico. Por favor, revisa el campo correo.", "Correo no válido", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        //        return false;
-        //    }
+            if (string.IsNullOrWhiteSpace(txtTecnico.Text))
+            {
+                MessageBox.Show("El campo contraseña es obligatorio.", "Campos vacíos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
 
-        //    if (string.IsNullOrWhiteSpace(txtNombreUsuario.Text))
-        //    {
-        //        MessageBox.Show("El campo nombre de usuario es obligatorio.", "Campos vacíos", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        //        return false;
-        //    }
+            if (string.IsNullOrWhiteSpace(txtTecnico.Text))
+            {
+                MessageBox.Show("El campo tecnico es obligatorio.", "Campos vacíos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
 
-        //    if (string.IsNullOrWhiteSpace(txtContraseña.Text))
-        //    {
-        //        MessageBox.Show("El campo contraseña es obligatorio.", "Campos vacíos", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        //        return false;
-        //    }
+            if (string.IsNullOrWhiteSpace(txtNota.Text))
+            {
+                MessageBox.Show("El campo nota es obligatorio.", "Campos vacíos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
 
-        //    if (!Regex.IsMatch(txtContraseña.Text, @"^(?=.*[A-Z])(?=.*\d).{8,}$"))
-        //    {
-        //        MessageBox.Show("La contraseña debe tener al menos 8 caracteres y contener al menos una letra mayúscula y un número. Ejemplo: Abc1234", "Contraseña no válida", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        //        return false;
-        //    }
+            return true;
+        }
 
-        //    if (txtContraseña.Text != txtConfirmarContraseña.Text)
-        //    {
-        //        MessageBox.Show("Las contraseñas no coinciden. Por favor, intenta nuevamente.", "Contraseñas no coinciden.", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        //        return false;
-        //    }
+        private void ListarUsuariosEditar()
+        {
+           using (SqlConnection conexion = new SqlConnection(conexion1.cadenaConexion))
+           {
+               string consulta = "SELECT * FROM Usuario WHERE Id = @id";
+               DataTable dtUsuario = new DataTable();
 
-        //    return true;
-        //}
+               try
+               {
+                   conexion.Open();
+                   SqlCommand comando = new SqlCommand(consulta, conexion);
+                   comando.Parameters.AddWithValue("@id", IdUsuario);
+                   SqlDataAdapter adaptador = new SqlDataAdapter(comando);
+                   adaptador.Fill(dtUsuario);
 
-        //private void ListarUsuariosEditar()
-        //{
-        //    using (SqlConnection conexion = new SqlConnection(conexion1.cadenaConexion))
-        //    {
-        //        string consulta = "SELECT * FROM Usuario WHERE Id = @id";
-        //        DataTable dtUsuario = new DataTable();
-
-        //        try
-        //        {
-        //            conexion.Open();
-        //            SqlCommand comando = new SqlCommand(consulta, conexion);
-        //            comando.Parameters.AddWithValue("@id", IdUsuario);
-        //            SqlDataAdapter adaptador = new SqlDataAdapter(comando);
-        //            adaptador.Fill(dtUsuario);
-
-        //            if (dtUsuario.Rows.Count > 0)
-        //            {
-        //                editar = true;
-        //                txtNombre.Text = dtUsuario.Rows[0]["Nombre"].ToString();
-        //                txtGmail.Text = dtUsuario.Rows[0]["Correo"].ToString();
-        //                cbRol.Text = dtUsuario.Rows[0]["Rol"].ToString();
-        //                txtNombreUsuario.Text = dtUsuario.Rows[0]["NombreUsuario"].ToString();
-        //                txtContraseña.Text = dtUsuario.Rows[0]["Contrasena"].ToString();
-        //            }
-        //            adaptador.Dispose();
-        //            conexion.Close();
-        //        }
-        //        catch (Exception ex)
-        //        {
-        //            MessageBox.Show("Error al cargar la información del registro: " + ex.Message);
-        //        }
-        //    }
-        //}
+                   if (dtUsuario.Rows.Count > 0)
+                   {
+                       editar = true;
+                       txtNombre.Text = dtUsuario.Rows[0]["Nombre"].ToString();
+                       txtGmail.Text = dtUsuario.Rows[0]["Correo"].ToString();
+                       cbRol.Text = dtUsuario.Rows[0]["Rol"].ToString();
+                       txtNombreUsuario.Text = dtUsuario.Rows[0]["NombreUsuario"].ToString();
+                       txtContraseña.Text = dtUsuario.Rows[0]["Contrasena"].ToString();
+                   }
+                   adaptador.Dispose();
+                   conexion.Close();
+               }
+               catch (Exception ex)
+               {
+                   MessageBox.Show("Error al cargar la información del registro: " + ex.Message);
+               }
+           }
+        }
 
         private void GuardarUsuario()
         {
-            //if (!ValidarCampos()) return;
+            if (!ValidarCampos()) return;
 
-            //using (SqlConnection conexion = new SqlConnection(conexion1.cadenaConexion))
-            //{
-            //    string consulta = (editar) ?
-            //        "UPDATE Usuario SET Nombre = @nombre, Correo = @correo, Rol = @rol, NombreUsuario = @nombreUsuario, Contrasena = @contrasena WHERE Id = @id" :
-            //        "INSERT INTO Usuario (Nombre, Correo, Rol, NombreUsuario, Contrasena) VALUES (@nombre, @correo, @rol, @nombreUsuario, @contrasena)";
+            using (SqlConnection conexion = new SqlConnection(conexion1.cadenaConexion))
+            {
+                string consulta = (editar) ?
+                    "UPDATE Factura \r\nSET IdCliente = @IdCliente, NumeroOrden = @NumeroOrden, FechaFactura = @FechaFactura, Falla = @Falla, DiagnosticoFinal = @DiagnosticoFinal, EstadoOrden = @EstadoOrden, IdTecnico = @IdTecnico, ServicioOfrecido = @ServicioOfrecido, ManoDeObra = @ManoDeObra, ITEBIS = @ITEBIS, Descuento = @Descuento, Subtotal = @Subtotal, Total = @Total, Nota = @Nota\r\nWHERE Id = @Id;\r\n" :
+                    "INSERT INTO Factura (IdCliente, NumeroOrden, FechaFactura, Falla, DiagnosticoFinal, EstadoOrden, IdTecnico, ServicioOfrecido, ManoDeObra, ITEBIS, Descuento, Subtotal, Total, Nota)\r\nVALUES (@IdCliente, @NumeroOrden, @FechaFactura, @Falla, @DiagnosticoFinal, @EstadoOrden, @IdTecnico, @ServicioOfrecido, @ManoDeObra, @ITEBIS, @Descuento, @Subtotal, @Total, @Nota);\r\n";
 
-            //    try
-            //    {
-            //        conexion.Open();
-            //        SqlCommand comando = new SqlCommand(consulta, conexion);
-            //        comando.Parameters.AddWithValue("@nombre", txtNombre.Text.Trim());
-            //        comando.Parameters.AddWithValue("@correo", txtGmail.Text.Trim());
-            //        comando.Parameters.AddWithValue("@rol", cbRol.Text.Trim());
-            //        comando.Parameters.AddWithValue("@nombreUsuario", txtNombreUsuario.Text.Trim());
-            //        comando.Parameters.AddWithValue("@contrasena", txtContraseña.Text.Trim());
-            //        comando.Parameters.AddWithValue("@contrasena", txtConfirmarContraseña.Text.Trim());
+                try
+                {
+                    conexion.Open();
+                    SqlCommand comando = new SqlCommand(consulta, conexion);
+  
+                    comando.Parameters.AddWithValue("@nombre", txtCliente.Text.ToString());
+                    comando.Parameters.AddWithValue("@nombre", txtNumeroOrden.Text.ToString());
+                    comando.Parameters.AddWithValue("@nombre", dtFecha.Text.ToString());
+                    comando.Parameters.AddWithValue("@nombre", txtFalla.Text.ToString());
+                    comando.Parameters.AddWithValue("@nombre", txtDiasgnosticoFinal.Text.ToString());
+                    comando.Parameters.AddWithValue("@nombre", txtTecnico.Text.ToString());
+                    comando.Parameters.AddWithValue("@nombre", ComboEstado.Text.ToString());
+                    comando.Parameters.AddWithValue("@nombre", txtMetodoPago.Text.ToString());
+                    comando.Parameters.AddWithValue("@nombre", txtNota.Text.ToString());
+                    comando.Parameters.AddWithValue("@nombre", txtItebis.Text.ToString());
+                    comando.Parameters.AddWithValue("@nombre", txtDescuento.Text.ToString());
+                    comando.Parameters.AddWithValue("@nombre", lblSubTotal.Text.ToString());
+                    comando.Parameters.AddWithValue("@nombre", lblTotal.Text.ToString());
 
-            //        if (editar) comando.Parameters.AddWithValue("@id", IdUsuario);
+                    if (editar) comando.Parameters.AddWithValue("@id", Id);
 
-            //        int resultado = comando.ExecuteNonQuery();
-            //        if (resultado > 0)
-            //        {
-            //            MessageBox.Show("Usuario guardado exitosamente.");
-            //            editar = false;
-            //            IdUsuario = 0;
-            //            LimpiarControles();
-            //            Close();
-            //        }
-            //        else
-            //        {
-            //            MessageBox.Show("No se pudo guardar el usuario.");
-            //        }
+                    int resultado = comando.ExecuteNonQuery();
+                    if (resultado > 0)
+                    {
+                        MessageBox.Show("Usuario guardado exitosamente.");
+                        editar = false;
+                        id = 0;
+                        LimpiarControles();
+                        Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se pudo guardar el usuario.");
+                    }
 
-            //        conexion.Close();
-            //    }
-            //    catch (Exception ex)
-            //    {
-            //        MessageBox.Show("Error al guardar el usuario: " + ex.Message);
-            //    }
-            //}
+                    conexion.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al guardar el usuario: " + ex.Message);
+                }
+            }
+
         }
-
-      
 
         private void EfectoModal_Tick(object sender, EventArgs e)
         {

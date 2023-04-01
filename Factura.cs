@@ -42,52 +42,40 @@ namespace SmartPhone7
             lblTotal.Text = "0";
         }
 
-        //private bool ValidarCampos()
-        //{
-        //    if (string.IsNullOrWhiteSpace(txtNombre.Text))
-        //    {
-        //        MessageBox.Show("El campo nombre es obligatorio.", "Campos vacíos", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        //        return false;
-        //    }
+        private bool ValidarCampos()
+        {
+            if (string.IsNullOrWhiteSpace(txtCliente.Text))
+            {
+                MessageBox.Show("El campo cliente es obligatorio.", "Campos vacíos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
 
-        //    if (string.IsNullOrWhiteSpace(txtGmail.Text))
-        //    {
-        //        MessageBox.Show("El campo correo es obligatorio.", "Campos vacíos", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        //        return false;
-        //    }
+            if (string.IsNullOrWhiteSpace(ComboEstado.Text))
+            {
+                MessageBox.Show("El campo Estado de orden de usuario es obligatorio.", "Campos vacíos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
 
-        //    if (!Regex.IsMatch(txtGmail.Text, @"^[^@\s]+@[^@\s]+\.[^@\s]+$"))
-        //    {
-        //        MessageBox.Show("El formato del correo no cumple con los criterios mínimos de un correo electrónico. Por favor, revisa el campo correo.", "Correo no válido", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        //        return false;
-        //    }
+            if (string.IsNullOrWhiteSpace(txtTecnico.Text))
+            {
+                MessageBox.Show("El campo contraseña es obligatorio.", "Campos vacíos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
 
-        //    if (string.IsNullOrWhiteSpace(txtNombreUsuario.Text))
-        //    {
-        //        MessageBox.Show("El campo nombre de usuario es obligatorio.", "Campos vacíos", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        //        return false;
-        //    }
+            if (string.IsNullOrWhiteSpace(txtTecnico.Text))
+            {
+                MessageBox.Show("El campo tecnico es obligatorio.", "Campos vacíos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
 
-        //    if (string.IsNullOrWhiteSpace(txtContraseña.Text))
-        //    {
-        //        MessageBox.Show("El campo contraseña es obligatorio.", "Campos vacíos", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        //        return false;
-        //    }
+            if (string.IsNullOrWhiteSpace(txtNota.Text))
+            {
+                MessageBox.Show("El campo nota es obligatorio.", "Campos vacíos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
 
-        //    if (!Regex.IsMatch(txtContraseña.Text, @"^(?=.*[A-Z])(?=.*\d).{8,}$"))
-        //    {
-        //        MessageBox.Show("La contraseña debe tener al menos 8 caracteres y contener al menos una letra mayúscula y un número. Ejemplo: Abc1234", "Contraseña no válida", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        //        return false;
-        //    }
-
-        //    if (txtContraseña.Text != txtConfirmarContraseña.Text)
-        //    {
-        //        MessageBox.Show("Las contraseñas no coinciden. Por favor, intenta nuevamente.", "Contraseñas no coinciden.", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        //        return false;
-        //    }
-
-        //    return true;
-        //}
+            return true;
+        }
 
         //private void ListarUsuariosEditar()
         //{

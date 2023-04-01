@@ -77,6 +77,7 @@ namespace SmartPhone7
             return true;
         }
 
+<<<<<<< HEAD
         private void ListarUsuariosEditar()
         {
            using (SqlConnection conexion = new SqlConnection(conexion1.cadenaConexion))
@@ -109,6 +110,50 @@ namespace SmartPhone7
                    MessageBox.Show("Error al cargar la información del registro: " + ex.Message);
                }
            }
+=======
+      private void ListarUsuariosEditar()
+        {
+            using (SqlConnection conexion = new SqlConnection(conexion1.cadenaConexion))
+            {
+                string consulta = "SELECT c.NombreCliente AS NombreCliente, f.NumeroOrden, f.FechaFactura, t.NombreTecnico AS NombreTecnico, f.Falla, f.ServicioOfrecido \r\nFROM Factura AS f\r\nINNER JOIN Clientes c ON f.IdCliente = c.Id \r\nINNER JOIN Tecnicos t ON f.IdTecnico = t.Id;";
+                DataTable dt = new DataTable();
+
+                try
+                {
+                    conexion.Open();
+                    SqlCommand comando = new SqlCommand(consulta, conexion);
+                    comando.Parameters.AddWithValue("@id", Id);
+                    SqlDataAdapter adaptador = new SqlDataAdapter(comando);
+                    adaptador.Fill(dt);
+
+                    if (dt.Rows.Count > 0)
+                    {
+                        editar = true;
+                        txtCliente.Text = dt.Rows[0]["NombreCliente"].ToString();
+                        txtNumeroOrden.Text = dt.Rows[0]["NumeroOrden"].ToString();
+                        dtFecha.Text = dt.Rows[0]["FechaFactura"].ToString();
+                        txtFalla.Text = dt.Rows[0]["Falla"].ToString();
+                        txtDiasgnosticoFinal.Text = dt.Rows[0]["Diagnostico"].ToString();
+                        txtTecnico.Text = dt.Rows[0]["Tecnico"].ToString();
+                        ComboEstado.Text = dt.Rows[0]["EstadoReparacion"].ToString();
+                        txtMetodoPago.Text = dt.Rows[0]["MetodoPago"].ToString();
+                        txtNota.Text = dt.Rows[0]["Nota"].ToString();
+                        txtItebis.Text = dt.Rows[0]["Itabis"].ToString();
+                        txtDescuento.Text = dt.Rows[0]["Descuento"].ToString();
+                        lblSubTotal.Text = dt.Rows[0]["Subtotal"].ToString();
+                        lblTotal.Text = dt.Rows[0]["Total"].ToString();
+
+
+                    }
+                    adaptador.Dispose();
+                    conexion.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al cargar la información del registro: " + ex.Message);
+                }
+            }
+>>>>>>> factura
         }
 
         private void GuardarUsuario()
@@ -255,23 +300,23 @@ namespace SmartPhone7
         //{
 
 
-        //    //// Restar la cantidad vendida del stock del producto
-        //    //productoSeleccionado.Stock -= cantidadSeleccionada;
+           //// Restar la cantidad vendida del stock del producto
+           //productoSeleccionado.Stock -= cantidadSeleccionada;
 
 
-        //    //// Actualizar el stock en la base de datos
-        //    //string sql = "UPDATE productos SET Stock = Stock - @cantidad WHERE ID = @productoId";
-        //    //SqlCommand cmd = new SqlCommand(sql, conn);
-        //    //cmd.Parameters.AddWithValue("@cantidad", cantidadVendida);
-        //    //cmd.Parameters.AddWithValue("@productoId", productoId);
-        //    //cmd.ExecuteNonQuery();
+           //// Actualizar el stock en la base de datos
+           //string sql = "UPDATE productos SET Stock = Stock - @cantidad WHERE ID = @productoId";
+           //SqlCommand cmd = new SqlCommand(sql, conn);
+           //cmd.Parameters.AddWithValue("@cantidad", cantidadVendida);
+           //cmd.Parameters.AddWithValue("@productoId", productoId);
+           //cmd.ExecuteNonQuery();
 
-        //    //// Actualizar el stock en el control DataGridView
-        //    //string sqlSelect = "SELECT * FROM productos";
-        //    //SqlDataAdapter da = new SqlDataAdapter(sqlSelect, conn);
-        //    //DataTable dt = new DataTable();
-        //    //da.Fill(dt);
-        //    //dataGridView1.DataSource = dt;
+           //// Actualizar el stock en el control DataGridView
+           //string sqlSelect = "SELECT * FROM productos";
+           //SqlDataAdapter da = new SqlDataAdapter(sqlSelect, conn);
+           //DataTable dt = new DataTable();
+           //da.Fill(dt);
+           //dataGridView1.DataSource = dt;
 
         //}
 

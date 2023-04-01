@@ -258,23 +258,23 @@ namespace SmartPhone7
         //{
 
 
-        //    //// Restar la cantidad vendida del stock del producto
-        //    //productoSeleccionado.Stock -= cantidadSeleccionada;
+           //// Restar la cantidad vendida del stock del producto
+           //productoSeleccionado.Stock -= cantidadSeleccionada;
 
 
-        //    //// Actualizar el stock en la base de datos
-        //    //string sql = "UPDATE productos SET Stock = Stock - @cantidad WHERE ID = @productoId";
-        //    //SqlCommand cmd = new SqlCommand(sql, conn);
-        //    //cmd.Parameters.AddWithValue("@cantidad", cantidadVendida);
-        //    //cmd.Parameters.AddWithValue("@productoId", productoId);
-        //    //cmd.ExecuteNonQuery();
+           //// Actualizar el stock en la base de datos
+           //string sql = "UPDATE productos SET Stock = Stock - @cantidad WHERE ID = @productoId";
+           //SqlCommand cmd = new SqlCommand(sql, conn);
+           //cmd.Parameters.AddWithValue("@cantidad", cantidadVendida);
+           //cmd.Parameters.AddWithValue("@productoId", productoId);
+           //cmd.ExecuteNonQuery();
 
-        //    //// Actualizar el stock en el control DataGridView
-        //    //string sqlSelect = "SELECT * FROM productos";
-        //    //SqlDataAdapter da = new SqlDataAdapter(sqlSelect, conn);
-        //    //DataTable dt = new DataTable();
-        //    //da.Fill(dt);
-        //    //dataGridView1.DataSource = dt;
+           //// Actualizar el stock en el control DataGridView
+           //string sqlSelect = "SELECT * FROM productos";
+           //SqlDataAdapter da = new SqlDataAdapter(sqlSelect, conn);
+           //DataTable dt = new DataTable();
+           //da.Fill(dt);
+           //dataGridView1.DataSource = dt;
 
         //}
 

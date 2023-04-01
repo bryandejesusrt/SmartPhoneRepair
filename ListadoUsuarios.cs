@@ -131,16 +131,10 @@ namespace SmartPhone7
         private void guna2Button1_Click(object sender, EventArgs e)
         {
             id = 0;
-            // Crear el formulario modal
+           
             Usuario formularioModal = new Usuario();
-
-            // Crear el formulario de fondo
             Form formularioDeFondo = UtilidadesFormularios.CrearFormularioDeFondo(Principal.ActiveForm);
-
-            // Mostrar el formulario modal centrado en el formulario principal
             UtilidadesFormularios.CentrarFormularioModal(formularioModal, Principal.ActiveForm);
-
-            // Mostrar el formulario modal como cuadro de diálogo
             formularioModal.ShowDialog(formularioDeFondo);
 
             // Liberar recursos

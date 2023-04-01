@@ -77,40 +77,6 @@ namespace SmartPhone7
             return true;
         }
 
-<<<<<<< HEAD
-        private void ListarUsuariosEditar()
-        {
-           using (SqlConnection conexion = new SqlConnection(conexion1.cadenaConexion))
-           {
-               string consulta = "SELECT * FROM Usuario WHERE Id = @id";
-               DataTable dtUsuario = new DataTable();
-
-               try
-               {
-                   conexion.Open();
-                   SqlCommand comando = new SqlCommand(consulta, conexion);
-                   comando.Parameters.AddWithValue("@id", IdUsuario);
-                   SqlDataAdapter adaptador = new SqlDataAdapter(comando);
-                   adaptador.Fill(dtUsuario);
-
-                   if (dtUsuario.Rows.Count > 0)
-                   {
-                       editar = true;
-                       txtNombre.Text = dtUsuario.Rows[0]["Nombre"].ToString();
-                       txtGmail.Text = dtUsuario.Rows[0]["Correo"].ToString();
-                       cbRol.Text = dtUsuario.Rows[0]["Rol"].ToString();
-                       txtNombreUsuario.Text = dtUsuario.Rows[0]["NombreUsuario"].ToString();
-                       txtContraseña.Text = dtUsuario.Rows[0]["Contrasena"].ToString();
-                   }
-                   adaptador.Dispose();
-                   conexion.Close();
-               }
-               catch (Exception ex)
-               {
-                   MessageBox.Show("Error al cargar la información del registro: " + ex.Message);
-               }
-           }
-=======
       private void ListarUsuariosEditar()
         {
             using (SqlConnection conexion = new SqlConnection(conexion1.cadenaConexion))
@@ -153,7 +119,7 @@ namespace SmartPhone7
                     MessageBox.Show("Error al cargar la información del registro: " + ex.Message);
                 }
             }
->>>>>>> factura
+
         }
 
         private void GuardarUsuario()
@@ -296,29 +262,29 @@ namespace SmartPhone7
             ComboEstado.SelectedIndex = 2;
         }
 
-        //private void ProductoSeleccionadoEventHandler(object sender, EventArgs e)
-        //{
+        private void ProductoSeleccionadoEventHandler(object sender, EventArgs e)
+        {
 
 
-           //// Restar la cantidad vendida del stock del producto
-           //productoSeleccionado.Stock -= cantidadSeleccionada;
+           // Restar la cantidad vendida del stock del producto
+        //    productoSeleccionado.Stock -= cantidadSeleccionada;
 
 
-           //// Actualizar el stock en la base de datos
-           //string sql = "UPDATE productos SET Stock = Stock - @cantidad WHERE ID = @productoId";
-           //SqlCommand cmd = new SqlCommand(sql, conn);
-           //cmd.Parameters.AddWithValue("@cantidad", cantidadVendida);
-           //cmd.Parameters.AddWithValue("@productoId", productoId);
-           //cmd.ExecuteNonQuery();
+        //    // Actualizar el stock en la base de datos
+        //    string sql = "UPDATE productos SET Stock = Stock - @cantidad WHERE ID = @productoId";
+        //    SqlCommand cmd = new SqlCommand(sql, conn);
+        //    cmd.Parameters.AddWithValue("@cantidad", cantidadVendida);
+        //    cmd.Parameters.AddWithValue("@productoId", productoId);
+        //    cmd.ExecuteNonQuery();
 
-           //// Actualizar el stock en el control DataGridView
-           //string sqlSelect = "SELECT * FROM productos";
-           //SqlDataAdapter da = new SqlDataAdapter(sqlSelect, conn);
-           //DataTable dt = new DataTable();
-           //da.Fill(dt);
-           //dataGridView1.DataSource = dt;
+        //    // Actualizar el stock en el control DataGridView
+        //    string sqlSelect = "SELECT * FROM productos";
+        //    SqlDataAdapter da = new SqlDataAdapter(sqlSelect, conn);
+        //    DataTable dt = new DataTable();
+        //    da.Fill(dt);
+        //    dataGridView1.DataSource = dt;
 
-        //}
+        }
 
     }
 }

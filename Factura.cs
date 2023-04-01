@@ -77,39 +77,39 @@ namespace SmartPhone7
             return true;
         }
 
-        //private void ListarUsuariosEditar()
-        //{
-        //    using (SqlConnection conexion = new SqlConnection(conexion1.cadenaConexion))
-        //    {
-        //        string consulta = "SELECT * FROM Usuario WHERE Id = @id";
-        //        DataTable dtUsuario = new DataTable();
+        private void ListarUsuariosEditar()
+        {
+           using (SqlConnection conexion = new SqlConnection(conexion1.cadenaConexion))
+           {
+               string consulta = "SELECT * FROM Usuario WHERE Id = @id";
+               DataTable dtUsuario = new DataTable();
 
-        //        try
-        //        {
-        //            conexion.Open();
-        //            SqlCommand comando = new SqlCommand(consulta, conexion);
-        //            comando.Parameters.AddWithValue("@id", IdUsuario);
-        //            SqlDataAdapter adaptador = new SqlDataAdapter(comando);
-        //            adaptador.Fill(dtUsuario);
+               try
+               {
+                   conexion.Open();
+                   SqlCommand comando = new SqlCommand(consulta, conexion);
+                   comando.Parameters.AddWithValue("@id", IdUsuario);
+                   SqlDataAdapter adaptador = new SqlDataAdapter(comando);
+                   adaptador.Fill(dtUsuario);
 
-        //            if (dtUsuario.Rows.Count > 0)
-        //            {
-        //                editar = true;
-        //                txtNombre.Text = dtUsuario.Rows[0]["Nombre"].ToString();
-        //                txtGmail.Text = dtUsuario.Rows[0]["Correo"].ToString();
-        //                cbRol.Text = dtUsuario.Rows[0]["Rol"].ToString();
-        //                txtNombreUsuario.Text = dtUsuario.Rows[0]["NombreUsuario"].ToString();
-        //                txtContraseña.Text = dtUsuario.Rows[0]["Contrasena"].ToString();
-        //            }
-        //            adaptador.Dispose();
-        //            conexion.Close();
-        //        }
-        //        catch (Exception ex)
-        //        {
-        //            MessageBox.Show("Error al cargar la información del registro: " + ex.Message);
-        //        }
-        //    }
-        //}
+                   if (dtUsuario.Rows.Count > 0)
+                   {
+                       editar = true;
+                       txtNombre.Text = dtUsuario.Rows[0]["Nombre"].ToString();
+                       txtGmail.Text = dtUsuario.Rows[0]["Correo"].ToString();
+                       cbRol.Text = dtUsuario.Rows[0]["Rol"].ToString();
+                       txtNombreUsuario.Text = dtUsuario.Rows[0]["NombreUsuario"].ToString();
+                       txtContraseña.Text = dtUsuario.Rows[0]["Contrasena"].ToString();
+                   }
+                   adaptador.Dispose();
+                   conexion.Close();
+               }
+               catch (Exception ex)
+               {
+                   MessageBox.Show("Error al cargar la información del registro: " + ex.Message);
+               }
+           }
+        }
 
         private void GuardarUsuario()
         {
@@ -212,11 +212,11 @@ namespace SmartPhone7
 
         private void btnAgregarTecnico_Click(object sender, EventArgs e)
         {
-            // BuscarTecnico formularioHijo = new BuscarTecnico();
-            // formularioHijo.ShowDialog();
+            BuscarTecnico formularioHijo = new BuscarTecnico();
+            formularioHijo.ShowDialog();
 
-            // idTecnico = formularioHijo.IdSeleccionado;
-            // txtTecnico.Text = formularioHijo.NombreSeleccionado;
+            idTecnico = formularioHijo.IdSeleccionado;
+            txtTecnico.Text = formularioHijo.NombreSeleccionado;
         }
 
         private void btnAñadirProducto_Click(object sender, EventArgs e)
